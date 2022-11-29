@@ -80,6 +80,7 @@ body {
 
 .form__signup input {
     all: unset;
+    width: calc(100% - 30px);
     font-weight: bold;
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -95,15 +96,14 @@ input[type=text], input[type=email]  {
     color: var(--DARKBLUENEUTRAL);
 }
 
-.message__error--firstName, .message__error--lastName, .message__error--email, .message__error--password {
+.message--error {
+    font-weight: bold;
     display: block;
     color:var(--REDCOLOR);
     font-size: .7em;
     font-style: italic;
-}
-
-.message--none {
-    display: none;
+    text-align: right;
+    margin-top: 5px;
 }
 
 .submit__btn {

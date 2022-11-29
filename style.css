@@ -95,6 +95,17 @@ input[type=text], input[type=email]  {
     color: var(--DARKBLUENEUTRAL);
 }
 
+.message__error--firstName, .message__error--lastName, .message__error--email, .message__error--password {
+    display: block;
+    color:var(--REDCOLOR);
+    font-size: .7em;
+    font-style: italic;
+}
+
+.message--none {
+    display: none;
+}
+
 .submit__btn {
     all: unset;
     color: white;

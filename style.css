@@ -86,6 +86,10 @@ body {
     padding: 15px;
 }
 
+.form__signup input:focus {
+    border: 1px solid var(--DARKBLUENEUTRAL);
+}
+
 .submit__btn {
     all: unset;
     color: white;

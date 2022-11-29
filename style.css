@@ -84,10 +84,15 @@ body {
     border: 1px solid lightgray;
     border-radius: 5px;
     padding: 15px;
+    font-size: .9em;
 }
 
-.form__signup input:focus {
+input:focus {
     border: 1px solid var(--DARKBLUENEUTRAL);
+}
+
+input[type=text], input[type=email]  {
+    color: var(--DARKBLUENEUTRAL);
 }
 
 .submit__btn {

@@ -6,16 +6,19 @@ const paraError = document.createElement("p");
 const iconError = document.createElement("img");
 
 //SCRIPT FOR FORM
-/* for (const inputItem of inputArray) {
-    inputItem.addEventListener('submit', e => {
-        if (!inputItem.value) {
-            e.preventDefault();
-            createIconError();
-            inputArray.children[i].appendChild(iconError);
+inputArray.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    for (let i = 0; i < inputArray.length - 1; i++) {
+        if(!inputArray[i].value) {
+           const inputMessage = document.querySelectorAll('.input__message');
+           inputMessage[i].style.display = "block";
         }
-    })
-} */
-
+        else {
+            console.log('fuck');
+            }    
+    }        
+})
 
 
 
@@ -25,6 +28,8 @@ function createIconError () {
     iconError.src = "/images/icon-error.svg";
     iconError.classList.add('icon--error');
 }
+
+
 
 for (let i = 0; i < inputArray.length - 1; i++) {
 

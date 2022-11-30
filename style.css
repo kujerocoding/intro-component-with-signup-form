@@ -128,6 +128,7 @@ input[type=text], input[type=email]  {
     text-align: center;
     text-transform: uppercase;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .promo__disclaimer {

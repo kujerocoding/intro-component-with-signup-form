@@ -5,6 +5,20 @@ const inputItem = ["First Name", "Last Name", "Email", "Password"];
 const paraError = document.createElement("p");
 const iconError = document.createElement("img");
 
+//SCRIPT FOR FORM
+/* for (const inputItem of inputArray) {
+    inputItem.addEventListener('submit', e => {
+        if (!inputItem.value) {
+            e.preventDefault();
+            createIconError();
+            inputArray.children[i].appendChild(iconError);
+        }
+    })
+} */
+
+
+
+
 // SCRIPT FOR EMPTY INPUT
 
 function createIconError () {
@@ -56,3 +70,5 @@ function notEmail () {
 }
 
 inputEmail.addEventListener('input', notEmail);
+
+

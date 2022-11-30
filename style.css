@@ -104,6 +104,16 @@ input[type=text], input[type=email]  {
     border: 1px solid var(--REDCOLOR);
 }
 
+.input__message {
+    display: none;
+    font-weight: bold;
+    color:var(--REDCOLOR);
+    font-size: .7em;
+    font-style: italic;
+    text-align: right;
+    margin-top: 5px;
+}
+
 .message--error {
     font-weight: bold;
     display: block;

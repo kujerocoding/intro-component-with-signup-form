@@ -1,26 +1,23 @@
 
 //input array = inputArray[index], div array = inputArray.childer[index]
+
 const inputArray = document.querySelector('.form__signup');
+const inputMessage = document.querySelectorAll('.input__message');
 const inputItem = ["First Name", "Last Name", "Email", "Password"];
 const paraError = document.createElement("p");
 const iconError = document.createElement("img");
 
-//SCRIPT FOR FORM
+//SCRIPT FOR FORM SUBMIT
+
 inputArray.addEventListener('submit', e => {
     e.preventDefault();
     
     for (let i = 0; i < inputArray.length - 1; i++) {
         if(!inputArray[i].value) {
-           const inputMessage = document.querySelectorAll('.input__message');
            inputMessage[i].style.display = "block";
-        }
-        else {
-            console.log('fuck');
-            }    
+        }       
     }        
 })
-
-
 
 // SCRIPT FOR EMPTY INPUT
 
@@ -29,8 +26,6 @@ function createIconError () {
     iconError.classList.add('icon--error');
 }
 
-
-
 for (let i = 0; i < inputArray.length - 1; i++) {
 
     function showErrorMessage() {
@@ -38,9 +33,7 @@ for (let i = 0; i < inputArray.length - 1; i++) {
            if (!inputArray[i].value) {
                
                 //error message
-                paraError.textContent = `${inputItem[i]} cannot be empty`;
-                paraError.classList.add('message--error');
-                inputArray.children[i].appendChild(paraError);
+                inputMessage[i].style.display = "block";
                //error border
                 inputArray[i].classList.add('input--error--border');
                //error icon
@@ -48,7 +41,7 @@ for (let i = 0; i < inputArray.length - 1; i++) {
                 inputArray.children[i].appendChild(iconError);
 
            } else {
-                paraError.textContent = "";
+                inputMessage[i].style.display = "none";
                 inputArray[i].classList.remove('input--error--border');
                 iconError.src = "";
            }
@@ -64,13 +57,20 @@ const inputEmail = inputArray[2];
 function notEmail () {
      if (inputEmail.value) {
         const regexMatch = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputEmail.value);
-        if (!regexMatch) {
-            paraError.textContent = "Looks like this is not an email";
-            paraError.classList.add('message--error');
-            inputArray.children[2].appendChild(paraError);
-        } else {
-            paraError.textContent="";
+            if (!regexMatch) {
+                paraError.textContent = "Looks like this is not an email";
+                paraError.classList.add('message--error');
+                inputArray.children[2].appendChild(paraError);
+                inputEmail.classList.add('input--error--border');
+                createIconError();
+                inputArray.children[2].appendChild(iconError);
+            } 
+            else {
+                paraError.textContent = "";
+            }
         }
+    else {
+        paraError.textContent = "";
     }
 }
 

@@ -3,12 +3,18 @@ const inputArray = document.querySelector('.form__signup');
 
 
 //replace array of input div
-const divFirstName = document.querySelector('.div--firstname');
+/* const divFirstName = document.querySelector('.div--firstname'); */
 //replace array of input
-const firstName = document.querySelector('.input__firstname');
-const para = document.createElement("p");
-const iconError = document.querySelector('.icon--error');
+/* const firstName = document.querySelector('.input__firstname'); */
 const inputItem = ["First Name", "Last Name", "Email", "Password"];
+const paraError = document.createElement("p");
+const iconError = document.createElement("img");
+
+function createIconError () {
+    iconError.src = "/images/icon-error.svg";
+    iconError.classList.add('icon--error');
+}
+
 
 for (let i = 0; i < inputArray.length - 1; i++) {
 
@@ -16,29 +22,23 @@ for (let i = 0; i < inputArray.length - 1; i++) {
         
            if (!inputArray[i].value) {
                
-               para.textContent = `${inputItem[i]} cannot be empty`;
-               para.classList.add('message--error');
-               inputArray[i].classList.add('input--error--border');
-               inputArray.children[i].appendChild(para);
+                //error message
+                paraError.textContent = `${inputItem[i]} cannot be empty`;
+                paraError.classList.add('message--error');
+                inputArray.children[i].appendChild(paraError);
+               //error border
+                inputArray[i].classList.add('input--error--border');
+               //error icon
+                createIconError();
+                inputArray.children[i].appendChild(iconError);
 
-               /* iconError.style.display = "block"; */
            } else {
-               para.textContent = "";
-               inputArray[i].classList.remove('input--error--border');
-               /* iconError.style.display = "none"; */
+                paraError.textContent = "";
+                inputArray[i].classList.remove('input--error--border');
+                iconError.src = "";
            }
-       
    }
 
-   inputArray[i].addEventListener('input',showErrorMessage );
+   inputArray[i].addEventListener('input',showErrorMessage);
 
 }
-
-
-
-/* function createPara () {
-    para.textContent = "shit";
-    divFirstName.appendChild(para);
-}
-
-createPara(); */
